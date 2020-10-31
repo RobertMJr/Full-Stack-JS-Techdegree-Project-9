@@ -12,16 +12,27 @@ module.exports = (sequelize) => {
             autoIncrement: true,
         },
         title: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notNull: {
+                    msg: 'Title is required.'
+                },
+                notEmpty: {
+                    msg: 'Please provide a title.'
+                }
+            }
         },
         description: {
             type: DataTypes.TEXT
         },
         estimatedTime: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         materialsNeeded: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: true,
         },
     }, { sequelize, modelName: 'Course' });
 
