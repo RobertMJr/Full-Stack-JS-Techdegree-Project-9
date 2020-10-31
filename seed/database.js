@@ -103,7 +103,8 @@ class Database {
         emailAddress VARCHAR(255) NOT NULL DEFAULT '', 
         password VARCHAR(255) NOT NULL DEFAULT '', 
         createdAt DATETIME NOT NULL, 
-        updatedAt DATETIME NOT NULL
+        updatedAt DATETIME NOT NULL,
+        UNIQUE (emailAddress)
       );
     `);
 
