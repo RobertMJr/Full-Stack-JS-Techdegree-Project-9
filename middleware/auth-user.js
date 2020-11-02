@@ -15,15 +15,12 @@ exports.authenticateUser = async (req, res, next) => {
                 req.currentUser = user;
             } else {
                 authed = false;
-                console.warn('Pass issue');
             }
         } else {
             authed = false;
-            console.warn('User issue');
         }
     } else {
         authed = false;
-        console.warn('Cred issue');
     }
     if(!authed) {
         res.status(401).end();
